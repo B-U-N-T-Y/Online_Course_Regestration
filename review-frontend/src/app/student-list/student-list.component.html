@@ -1,0 +1,74 @@
+
+<div class="table-container" style="width: 100%; margin: auto;">
+
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between">
+      <button (click)="createStudent()" class="btn btn-outline-success me-2" type="button"><i class="bi bi-person-fill-add"></i> Register Student</button>
+      <button type="button" class="btn btn-outline-danger" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log Out </button>
+    </div>
+  </nav>
+
+    <br>
+  <div class="search-container" style="width: 98%; margin: auto; display: flex; align-items: center; position: relative;">
+    <input class="form-control me-2" type="search" [(ngModel)]="searchName" placeholder="Search Name" aria-label="Search">
+    <!-- <input class="form-control me-2" type="search" [(ngModel)]="searchCourse" placeholder="Search Course" aria-label="Search"> -->
+
+
+    <select class="form-select" id="course" [(ngModel)]="searchCourse" name="course">
+        <option value="" disabled selected>Select Course</option>
+        <option *ngFor="let course of allCourses" [value]="course">
+          {{course}}
+        </option>
+      </select>
+
+      <!-- <select class="form-select" id="course" [(ngModel)]="searchCourse" name="course">
+        <option value="" disabled selected>Select Platform</option>
+        <option *ngFor="let course of allCourses" [value]="course">
+            {{course}}
+        </option>
+    </select> -->
+
+    <button (click)="toggleDropDown()" class="datebtn">Registration Date▽</button>
+        
+    <div *ngIf="showDateFields" class="date-box">
+        <!-- <h10>Enter Registration Date range</h10> -->
+        <label for="startDate">Start Date:</label>
+        <input type="date" [(ngModel)]="searchStart">
+        <label for="endDate">End Date:</label>
+        <input type="date" [(ngModel)]="searchEnd">
+    </div>
+
+    <button class="btn btn-outline-success" (click)="searching()" type="submit"><i class="bi bi-search"></i></button>
+
+    <button type="button" class="btn btn-outline-warning" (click)="onCancel()" >Clear</button>
+</div>
+
+  <br>
+
+    <table id="myTable" class="table table-striped book-list-table table-hover border-table" style="width: 100%;">
+      <thead>
+        <tr>
+          <th>User Id</th>
+          <th>Department</th>
+          <th>Course</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Mobile Number</th>
+          <th>Date of registration</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated by DataTables -->
+      </tbody>
+    </table>
+    
+    <div class="action-container">
+      <!-- <button (click)="createStudent()" class="btn btn-outline-success me-2" type="button"><i class="bi bi-person-fill-add"></i> Add Student</button> -->
+      <button (click)="deleteStudent()" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+      <button (click)="updateStudent()" class="btn btn-info" style="margin-left: 10px;"><i class="bi bi-pencil-square"></i> Update</button>
+      <!-- <button type="button" class="btn btn-outline-danger" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log Out </button> -->
+    </div>
+  </div>

@@ -1,0 +1,111 @@
+<form (ngSubmit)="onSubmit()" class="student-form">
+    <h2>Update Student</h2>
+    
+    <div class="row mb-3">
+      <label for="userId" class="col-sm-3 col-form-label">UserId</label>
+      <div class="col-sm-9">
+          <input type="number" class="form-control" id="userId" required [(ngModel)]="student.userId" name="userId">
+      </div>
+  </div>
+  
+  <div class="row mb-3">
+    <label for="department" class="col-sm-3 col-form-label">Department</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="department" required [(ngModel)]="student.department" name="department">
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+      <label for="course" class="col-sm-3 col-form-label">Course</label>
+      <div class="col-sm-9">
+          <input type="text" class="form-control" id="course" required [(ngModel)]="student.course" name="course" readonly>
+          
+          <!-- <select class="form-control" id="course" required [(ngModel)]="student.course" name="course">
+            <option value="" disabled selected>Select a course</option>
+            <option *ngFor="let course of availableCourses" [value]="course">{{ course }}</option>
+          </select> -->
+<!--   
+          <div *ngIf="errorMessages.course" class="text-danger">
+              {{ errorMessages.course }}
+          </div> -->
+      </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="price" class="col-sm-3 col-form-label">Price</label>
+    <div class="col-sm-9">
+        <input type="number" class="form-control" id="price" required [(ngModel)]="student.price" name="price" readonly>
+    </div>
+</div>
+  
+    <div class="row mb-3">
+        <label for="name" class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" required [(ngModel)]="student.name" name="name">
+            <div *ngIf="errorMessages.name" class="text-danger">
+                {{ errorMessages.name }}
+            </div>
+        </div>
+    </div>
+  
+    <div class="row mb-3">
+        <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+        <div class="col-sm-9">
+          <!-- <input type="number" class="form-control" id="age" [(ngModel)]="student.age" name="age"> -->
+          
+          <div>
+            <input type="radio" id="male" name="gender" [(ngModel)]="student.gender" value="Male">
+            <label for="male">Male</label>
+        </div>
+        <div>
+            <input type="radio" id="female" name="gender" [(ngModel)]="student.gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <input type="radio" id="other" name="gender" [(ngModel)]="student.gender" value="Other">
+            <label for="other">Other</label>
+        </div>
+
+          <div *ngIf="errorMessages.gender" class="text-danger">
+            {{errorMessages.gender}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="email" class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="email" [(ngModel)]="student.email" name="email">
+          <div *ngIf="errorMessages.email" class="text-danger">
+            {{errorMessages.email}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="mobileNo" class="col-sm-3 col-form-label">Mobile Number</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="mobileNo" [(ngModel)]="student.mobileNo" name="mobileNo">
+          <div *ngIf="errorMessages.mobileNo" class="text-danger">
+            {{errorMessages.mobileNo}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="regestrationDate" class="col-sm-3 col-form-label">Date of Registration </label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" id="dob" [(ngModel)]="student.regestrationDate" name="regestrationDate">
+          <div *ngIf="errorMessages.regestrationDate" class="text-danger">
+              {{errorMessages.regestrationDate}}
+          </div>
+        </div>
+      </div>
+  
+  
+    <br>
+    <div class="text-center"> <!-- Center the button -->
+        <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </form>
+  

@@ -1,0 +1,24 @@
+<div class="background">
+    <div class="login">
+    <form (ngSubmit)="onSubmit()">
+        <h3>Login</h3>
+
+        <div class="input-container">
+            <i class="bi bi-person-circle"></i>
+            <input type="text" id="username" placeholder="Username" required [(ngModel)]="user.userName" name="userName" (click)="removeVal()">
+        </div>
+        <span class="val">{{ValidationUser}}</span>
+
+        <div class="input-container">
+            <i class="bi bi-shield-lock-fill"></i>
+            <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" placeholder="Password" required [(ngModel)]="user.password" name="password" (click)="removeVal()">
+            <i class="bi eye" 
+               [ngClass]="isPasswordVisible ? 'bi-eye-fill' : 'bi-eye-slash-fill'" 
+               (click)="togglePasswordVisibility()"></i>
+        </div>
+        <span class="val">{{ValidationPassword}}</span>
+
+        <button type="submit">Log In</button>
+    </form>
+</div>
+</div>

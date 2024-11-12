@@ -1,0 +1,23 @@
+.student-form {
+    max-width: 600px; /* Maximum width of the form */
+    margin: 30px auto; /* Center the form */
+    padding: 20px; /* Padding inside the form */
+    border: 1px solid #ccc; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.student-form h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.text-danger {
+    margin-top: 5px; /* Space above error message */
+    font-size: 0.9em; /* Slightly smaller text for error messages */
+}
+
+.row {
+    margin-bottom: 15px; /* Space between rows */
+}
